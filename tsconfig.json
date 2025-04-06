@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+      // language and environment
+      "jsx": "react-jsx",
+      "target": "ES2022",
+
+	// modules
+    "module": "Node16",
+    "moduleResolution": "Node16",
+
+	// Interop Constraints
+    "allowSyntheticDefaultImports": true,
+	
+	// type checking
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+	
+	// emit
+    "outDir": "dist",
+    "declaration": true,
+  },
+  "exclude": ["dist/**/*"]  
+}
