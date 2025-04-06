@@ -1,0 +1,141 @@
+.main_form {
+	width: clamp(var(--sz256), 100%, var(--sz512));
+	display: flex;
+	flex-direction: column;
+	gap: var(--sz32);
+	border-radius: var(--sz8);
+	padding: var(--sz24);
+	border: 2px solid var(--gray700);
+	box-shadow: var(--shadow3);
+	& > .main_form_inputs {
+		display: flex;
+		flex-direction: column;
+		gap: var(--sz16);
+		& > label {
+			display: flex;
+			flex-direction: column;
+			gap: var(--sz8);
+			& > .label {
+				font-weight: 500;
+			}
+			& > input{
+				box-shadow: inset var(--shadow1);
+				padding: var(--sz12) var(--sz12);
+				background-color: var(--gray800);
+				border: none;
+				font-size: var(--fs16);
+				border-radius: var(--sz4);
+				color: var(--gray200);
+				transition: 0.2s outline;
+				outline: 2px solid transparent;
+				&:focus{
+					outline: 2px solid var(--primary500);
+				}
+			}
+			& > .error {
+				border: none;
+				font-size: var(--fs14);
+				color: var(--red500);
+			}
+		}
+	}
+	& > .main_form_button {
+		background-color: var(--primary500) ;
+		border-radius: var(--sz4);
+		border: none;
+		color: var(--gray200);
+		font-size: var(--fs18);
+		padding: var(--sz12) 0;
+		transition: 0.2s outline;
+		cursor: pointer;
+		outline: 2px solid transparent;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		user-select: none;
+		overflow: hidden;
+		transition: outline .3s;
+		&:focus{
+			outline-color: var(--primary300);
+		}
+		&:hover{
+			background-color: var(--primary600);
+		}
+		&.success {
+			pointer-events: none;
+			background-color: #77a;
+			&::before {
+				scale: 1;
+			}
+			& > #label {
+				opacity: 0;
+			}
+			& > #done {
+				opacity: 1;
+				translate: 0;
+			}
+			&:focus {
+				outline-color: var(--green600);
+			}
+		}
+		&.loading {
+			pointer-events: none;
+			& > #label {
+			opacity: 0;
+			}
+			& > #loader {
+			opacity: 1;
+			animation-play-state: running;
+			}
+		}
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			border-radius: 50%;
+			background-color: var(--green700);
+			aspect-ratio: 1;
+			width: 110%;
+			scale: 0;
+			transition: scale .3s ease-out;
+		}
+		& > span {
+			position: relative;
+			transition: translate .3s, opacity .3s;
+		}
+		& > #done {
+			position: absolute;
+			translate: 0 100%;
+			opacity: 0;
+		}
+		& > #loader {
+			opacity: 0;
+			position: absolute;
+			width: 30px;
+			aspect-ratio: 1;
+			border-radius: 50%;
+			border: 3px solid transparent;
+			border-left-color: rgb(196, 222, 224);
+			border-bottom-width: 0;
+			animation: loop .5s linear infinite;
+			animation-play-state: paused;
+			transition: opacity .3s;
+		}
+	}
+}
+
+@media (width < 512px) {
+	.main_form {
+		border: none;
+		box-shadow: none;
+		width: 100%;
+	}
+}
+  
+  
+@keyframes loop {
+	to {
+		rotate: 360deg;
+	}
+}

@@ -1,0 +1,75 @@
+.pass_modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+	overflow: hidden;
+	& > .pass_modal__form {
+		display: flex;
+		flex-direction: column;
+		background-color: var(--gray900);
+		box-shadow: var(--shadow3);
+		border-radius: var(--sz4);
+		border: 2px solid var(--gray700);
+		padding: var(--sz16);
+		width: clamp(var(--sz256), 80%, var(--sz512));
+		gap: var(--sz24);
+		& > .pass_modal__header {
+			display: flex;
+			flex-direction: column;
+			gap: var(--sz8);
+		}
+		& > .pass_modal__body {
+			display: flex;
+			flex-direction: column;
+			gap: var(--sz16);
+			& > .pass_modal__label {
+				display: flex;
+				flex-direction: column;
+				gap: var(--sz8);
+				& > .pass_modal__input {
+					box-shadow: inset var(--shadow1);
+					padding: var(--sz12) var(--sz12);
+					background-color: var(--gray800);
+					border: none;
+					font-size: var(--fs16);
+					border-radius: var(--sz4);
+					color: var(--gray200);	
+					transition: 0.2s outline;
+					outline: 2px solid transparent;
+					&:focus{
+						outline: 2px solid var(--primary500);
+					}
+				}
+				& > .pass_modal__error {
+					border: none;
+					font-size: var(--fs14);
+					color: var(--red500);
+				}
+			}
+			& > .pass_modal__button {
+				background-color: var(--primary500) ;
+				border-radius: var(--sz4);
+				border: none;
+				color: var(--gray200);
+				font-size: var(--fs18);
+				padding: var(--sz12) 0;
+				transition: 0.2s outline;
+				cursor: pointer;
+				outline: 2px solid transparent;
+				&:focus{
+					outline: 2px solid var(--primary300);
+				}
+				&:hover{
+					background-color: var(--primary600);
+				}
+			}
+		}
+	}
+}

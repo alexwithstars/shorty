@@ -1,0 +1,156 @@
+* {
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src: url('./fonts/Inter-Regular.woff2') format('woff2'),
+	url('./fonts/Inter-Regular.woff') format('woff'),
+	url('./fonts/Inter-Regular.ttf') format('ttf');
+	font-display: swap;
+	font-weight: normal;
+	font-style: normal;
+}
+  
+:root {
+	/* sizing and spacing */
+	--sz4: 4px;
+	--sz8: 8px;
+	--sz12: 12px;
+	--sz16: 16px;
+	--sz24: 24px;
+	--sz32: 32px;
+	--sz48: 48px;
+	--sz64: 64px;
+	--sz96: 96px;
+	--sz128: 128px;
+	--sz192: 192px;
+	--sz256: 256px;
+	--sz384: 384px;
+	--sz512: 512px;
+	--sz640: 640px;
+	--sz768: 768px;
+  
+	/* font sizing */
+	--fs12: 12px;
+	--fs14: 14px;
+	--fs16: 16px;
+	--fs18: 18px;
+	--fs20: 20px;
+	--fs24: 24px;
+	--fs30: 30px;
+	--fs36: 36px;
+	--fs48: 48px;
+	--fs60: 60px;
+	--fs72: 72px;
+  
+	/* colors */
+	--gray900: hsl(218, 17%, 9%);
+	--gray800: hsl(218, 8%, 20%);
+	--gray700: hsl(218, 5%, 31%);
+	--gray600: hsl(214, 3%, 43%);
+	--gray500: hsl(214, 3%, 54%);
+	--gray400: hsl(210, 3%, 65%);
+	--gray300: hsl(210, 5%, 76%);
+	--gray200: hsl(204, 7%, 87%);
+	--gray100: hsl(204, 45%, 98%);
+  
+	--primary900: hsl(216, 100%, 8%);
+	--primary800: hsl(210, 100%, 12%);
+	--primary700: hsl(210, 100%, 16%);
+	--primary600: hsl(208, 100%, 24%);
+	--primary500: hsl(206, 100%, 30%);
+	--primary400: hsl(206, 100%, 38%);
+	--primary300: hsl(206, 80%, 60%);
+	--primary200: hsl(206, 80%, 75%);
+	--primary100: hsl(200, 100%, 90%);
+	
+	--secondary900: hsl(269, 61%, 11%);
+	--secondary800: hsl(269, 60%, 17%);
+	--secondary700: hsl(270, 61%, 22%);
+	--secondary600: hsl(270, 61%, 33%);
+	--secondary500: hsl(270, 61%, 44%);
+	--secondary400: hsl(270, 48%, 58%);
+	--secondary300: hsl(270, 48%, 72%);
+	--secondary200: hsl(269, 49%, 79%);
+	--secondary100: hsl(270, 49%, 86%);
+  
+	--accent900: hsl(185, 97%, 12%);
+	--accent800: hsl(185, 98%, 18%);
+	--accent700: hsl(185, 98%, 24%);
+	--accent600: hsl(185, 99%, 36%);
+	--accent500: hsl(185, 99%, 48%);
+	--accent400: hsl(184, 99%, 68%);
+	--accent300: hsl(183, 91%, 79%);
+	--accent200: hsl(183, 88%, 87%);
+	--accent100: hsl(180, 87%, 94%);
+  
+	--green900: hsl(145, 55%, 12%);
+	--green800: hsl(145, 55%, 18%);
+	--green700: hsl(144, 54%, 24%);
+	--green600: hsl(144, 55%, 36%);
+	--green500: hsl(144, 55%, 48%);
+	--green400: hsl(144, 52%, 61%);
+	--green300: hsl(143, 52%, 74%);
+	--green200: hsl(141, 52%, 87%);
+	--green100: hsl(138, 52%, 94%);
+  
+	--yellow900: hsl(44, 40%, 17%);
+	--yellow800: hsl(43, 40%, 34%);
+	--yellow700: hsl(43, 41%, 50%);
+	--yellow600: hsl(43, 57%, 59%);
+	--yellow500: hsl(43, 82%, 67%);
+	--yellow400: hsl(43, 82%, 71%);
+	--yellow300: hsl(40, 84%, 76%);
+	--yellow200: hsl(43, 83%, 84%);
+	--yellow100: hsl(43, 86%, 92%);
+  
+	--red900: hsl(0, 64%, 13%);
+	--red800: hsl(0, 64%, 20%);
+	--red700: hsl(0, 65%, 26%);
+	--red600: hsl(0, 65%, 39%);
+	--red500: hsl(0, 71%, 52%);
+	--red400: hsl(0, 71%, 64%);
+	--red300: hsl(0, 72%, 76%);
+	--red200: hsl(0, 73%, 88%);
+	--red100: hsl(0, 73%, 94%);
+  
+	/* shadows */
+	--shadow1: 0 1px 3px hsla(0, 0%, 0%, 0.2);
+	--shadow2: 0 4px 6px hsla(0, 0%, 0%, 0.2);
+	--shadow3: 0 5px 15px hsla(0, 0%, 0%, 0.2);
+	--shadow4: 0 10px 24px hsla(0, 0%, 0%, 0.2);
+	--shadow5: 0 15px 35px hsla(0, 0%, 0%, 0.2);
+  
+}
+  
+body {
+	background-color: var(--gray900);
+	color: var(--gray200);
+	font-family: 'Inter', sans-serif;
+	font-size: var(--fs16);
+	tab-size: 2;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	min-height: 100dvh;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.main {
+	padding: var(--sz48);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	gap: var(--sz24);
+}
+
+@media (width < 512px) {
+	.main {
+		padding: var(--sz24) 0;
+	}
+}
+
