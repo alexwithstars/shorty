@@ -5,8 +5,6 @@
 		"use": "@vercel/node"
 	}
 	],
-	"buildCommand": "pnpm run build",
-	"startCommand": "pnpm run start",
 	"rewrites": [
 	  {
 		"source": "/(.*)",
