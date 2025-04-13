@@ -8,6 +8,7 @@ import fs from 'node:fs/promises'
 import { ViteDevServer } from 'vite'
 import { BAD_REQUEST } from './utils/reponse.js'
 
+console.log('Starting server...')
 const app: express.Express = express()
 
 app.disable('x-powered-by')
