@@ -33,9 +33,10 @@ jobs:
       - name: Build project
         run: pnpm build
 
-      - name: Deploy to Vercel
-        env:
+      - name: Deploy to Vercel Action
+        uses: BetaHuhn/deploy-to-vercel-action@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_SCOPE: ${{ secrets.VERCEL_SCOPE }}
-          VERCEL_PROJECT: ${{ secrets.VERCEL_PROJECT }}
-        run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --scope ${{ secrets.VERCEL_SCOPE }} --project ${{ secrets.VERCEL_PROJECT }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
