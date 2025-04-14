@@ -7,8 +7,12 @@ import { ShortenerModel } from './models/mongodb/shortener.js'
 import fs from 'node:fs/promises'
 import { ViteDevServer } from 'vite'
 import { BAD_REQUEST } from './utils/reponse.js'
+import debug from './debug.js'
 
 console.log('Starting server...')
+
+await debug()
+
 const app: express.Express = express()
 
 app.disable('x-powered-by')
