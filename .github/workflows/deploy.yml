@@ -34,6 +34,9 @@ jobs:
       - name: Build project
         run: pnpm build
 
+      - name: debug tree
+        run: ls -aR | grep -vE '(^\.git|node_modules)'
+
       - name: Install Vercel CLI
         run: pnpm add -g vercel
 
