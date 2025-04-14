@@ -1,9 +1,10 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-const gitIgnore = await fs.readFile(path.join(process.cwd(), '.gitignore'), 'utf-8')
-const gitIgnoreLines = gitIgnore.split('\n').filter(line => line.trim() !== '')
-gitIgnoreLines.push('.git')
+const gitIgnoreLines = [
+  '.git',
+  'node_modules'
+]
 
 export default async function debug (): Promise<void> {
   console.log('Debugging...')
