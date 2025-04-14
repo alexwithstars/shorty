@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-      // language and environment
-      "jsx": "react-jsx",
-      "target": "ES2022",
+    // language and environment
+    "jsx": "react-jsx",
+    "target": "ES2022",
 
 	// modules
     "module": "Node16",
@@ -20,7 +20,6 @@
 	
 	// emit
     "outDir": "dist",
-    "declaration": true,
   },
   "exclude": ["dist/**/*"]  
 }
