@@ -39,6 +39,8 @@ if (!PRODUCTION) {
   app.use(BASE_ROUTES.APP, sirv('./view', { extensions: [] }))
 }
 
+// I'm aware of this, but in this case, it's not a problem
+// eslint-disable-next-line @typescript-eslint/no-misused-promises
 app.get(BASE_ROUTES.APP, async (req, res) => {
   try {
     const url = req.originalUrl.replace(BASE_ROUTES.APP, '')
