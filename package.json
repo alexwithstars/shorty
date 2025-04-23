@@ -12,7 +12,8 @@
     "preview": "pnpm run build && pnpm run start",
     "dev": "tsx watch src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "ts-standard --fix"
+    "lint": "ts-standard --fix",
+    "clear": "tsx src/clean.ts"
   },
   "author": "Alexwithstars",
   "license": "ISC",
