@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/src/index.js",
     "build": "pnpm run build:client && pnpm run build:server && pnpm run build:typescript && echo done",
-    "build:client": "vite build --outDir dist/client",
+    "build:client": "vite build --outDir dist/client --base \/app",
     "build:server": "vite build --ssr src/view/entry-server.tsx --outDir dist/server",
     "build:typescript": "tsc",
     "preview": "pnpm run build && pnpm run start",
