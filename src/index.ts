@@ -57,10 +57,6 @@ app.get(BASE_ROUTES.APP, async (req, res) => {
       render = (await vite.ssrLoadModule('./src/view/entry-server.js')).render
     } else {
       template = await fs.readFile(join(_dirname, '..', 'client', 'index.html'), 'utf-8')
-      // this is expected 'cause this is for a production build and the file
-      // doesn't exist in the dev environment
-      // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
-      // @ts-ignore
       const serverPath = join(_dirname, '..', 'server', 'entry-server.js')
       render = (await import(pathToFileURL(serverPath).toString())).render
     }
