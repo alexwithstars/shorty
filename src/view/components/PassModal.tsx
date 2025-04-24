@@ -16,6 +16,7 @@ export const PassModal: React.FC<Props> = ({ onSubmit }) => {
 
     const response = await checkToken(token)
     if (response) {
+      window.sessionStorage.setItem('token', token)
       onSubmit(token)
     } else {
       setError(true)
