@@ -14,7 +14,9 @@ export const {
   NODE_ENV = 'development',
   AUTH_TOKEN = '',
   MONGO_CONNECT_URI = '',
-  PORT = 3000
+  PORT = 3000,
+  DEBUG = 'n'
 } = globalThis?.process?.env ?? {}
 
 export const PRODUCTION = NODE_ENV === 'production'
+export const DEBUG_MODE = DEBUG === 'y' || DEBUG === 'true' || DEBUG === '1'

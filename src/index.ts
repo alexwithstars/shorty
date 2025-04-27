@@ -1,13 +1,12 @@
 import 'dotenv/config'
 import express, { ErrorRequestHandler } from 'express'
 import { createShortenerRouter } from './routes/shortener.js'
-import { BASE_ROUTES, PRODUCTION, PORT } from './utils/consts.js'
+import { BASE_ROUTES, PRODUCTION, PORT, DEBUG_MODE } from './utils/consts.js'
 import { trackRequests } from './middlewares/development.js'
 import { ShortenerModel } from './models/mongodb/shortener.js'
 import fs from 'node:fs/promises'
 import { ViteDevServer } from 'vite'
 import { BAD_REQUEST } from './utils/reponse.js'
-import debug from './debug.js'
 import { join, dirname } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 
@@ -16,7 +15,9 @@ const _dirname = dirname(_filename)
 
 console.log('Starting server...')
 
-await debug()
+if (DEBUG_MODE) {
+  await (await import('./debug.js')).default()
+}
 
 const app: express.Express = express()
 
