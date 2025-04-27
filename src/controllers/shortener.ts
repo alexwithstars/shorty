@@ -9,12 +9,11 @@ export class ShortenerController {
     this.ShortenerModel = ShortenerModel
   }
 
-  navigate: RequestHandler = async (req, res) => {
+  navigate: RequestHandler = async (req, res, next) => {
     const { alias } = req.params
     const url = await this.ShortenerModel.getUrl(alias.toLowerCase())
     if (url === undefined) {
-      res.status(404).json(NOT_FOUND)
-      return
+      return next()
     }
     res.status(302).redirect(url)
   }
