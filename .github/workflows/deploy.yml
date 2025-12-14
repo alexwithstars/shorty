@@ -34,9 +34,6 @@ jobs:
       - name: Build project
         run: pnpm build
 
-      - name: Install Vercel CLI
-        run: pnpm add -g vercel
-
       - name: Deploy to Vercel Action
         uses: BetaHuhn/deploy-to-vercel-action@v1
         with:
