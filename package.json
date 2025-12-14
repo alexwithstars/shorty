@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/src/index.js",
     "build": "pnpm run build:client && pnpm run build:server && pnpm run build:typescript && echo done",
-    "build:client": "vite build --outDir dist/client --base \/app",
+    "build:client": "vite build --outDir dist/client --base /app",
     "build:server": "vite build --ssr src/view/entry-server.tsx --outDir dist/server",
     "build:typescript": "tsc",
     "preview": "pnpm run build && pnpm run start",
@@ -24,8 +24,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.2",
     "mongoose": "^8.7.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "sirv": "^3.0.1",
     "vite": "^6.2.2",
     "zod": "^3.23.8"
@@ -34,14 +34,13 @@
     "@types/compression": "^1.7.5",
     "@types/express": "^4.17.21",
     "@types/node": "^22.14.1",
-    "@types/react": "^19.0.11",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react-swc": "^3.8.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react-swc": "^4.2.2",
     "ts-standard": "^12.0.2",
     "tsx": "^4.19.3",
     "typescript": "^5.7.3"
   },
-  "packageManager": "pnpm@9.15.6",
   "eslintConfig": {
     "parserOptions": {
       "project": "./tsconfig.json"

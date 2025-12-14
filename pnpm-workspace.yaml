@@ -1,0 +1,8 @@
+publicHoistPattern:
+  - '*eslint*'
+
+minimumReleaseAge: 1440
+
+onlyBuiltDependencies:
+  - '@swc/core'
+  - esbuild
